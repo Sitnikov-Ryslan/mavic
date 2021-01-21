@@ -190,5 +190,103 @@
     }
 }
 
+.benefits {
+    &__items {
+        display: flex;
+        flex-wrap: wrap;
+        padding-left: 25px;
+    }
+
+    &__item {
+        margin-bottom: 100px;
+        display: flex;
+        align-items: flex-end;
+
+        &:nth-child(even) {
+            margin-left: 40px;
+            transform: translateY(17px);
+        }
+
+        &-1 {
+            position: relative;
+
+            &::before {
+                content: '';
+                position: absolute;
+                height: 45px;
+                width: 245px;
+                background: url(../images/line-1.svg) no-repeat center center;
+                right: -55px;
+                top: 39px;
+            }
+        }
+
+        &-3 {
+            position: relative;
+
+            &::before {
+                content: '';
+                position: absolute;
+                height: 62px;
+                width: 463px;
+                background: url(../images/line-2.svg) no-repeat center center;
+                right: -55px;
+                top: -70px;
+            }
+
+            &::after {
+                content: '';
+                position: absolute;
+                height: 39px;
+                width: 254px;
+                background: url(../images/line-3.svg) no-repeat center center;
+                right: -67px;
+                top: 40px;
+            }
+        }
+    }
+
+    &__num {
+        @extend %ubuntu-bold;
+        line-height: 41px;
+        font-size: 36px;
+        margin-right: 10px;
+    }
+
+    &__img {
+        position: relative;
+        margin-right: 32px;
+
+        &::before {
+            content: '';
+            position: absolute;
+            width: 193px;
+            height: 128px;
+            border: 2px solid #fff;
+            top: -12px;
+            left: 12px;
+            z-index: -1;
+        }
+    }
+
+    &__info {
+        width: 300px;
+    }
+
+    &__info-title {
+        width: 123px;
+        font-size: 21px;
+        line-height: 24px;
+        @extend %ubuntu-bold;
+        margin-bottom: 10px;
+    }
+
+    &__info-text {
+        font-size: 15px;
+        line-height: 18px;
+        
+    }
+}
+
 
 @import "media";
