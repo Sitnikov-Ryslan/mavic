@@ -8,5 +8,11 @@ $(function(){
     $('.questions__item-title').on('click', function() {
         $('.questions__item').removeClass('questions__item_active');
         $(this).parent().addClass('questions__item_active');
-    })
+    });
+
+    $('#fullpage').fullpage({
+		autoScrolling:true,
+        scrollHorizontally: true,
+        sectionSelector: '.page-section',
+	});
 });
