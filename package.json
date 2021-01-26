@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Vadim Prokopchuk",
+  "author": "Ryslan Sitnikov",
   "license": "ISC",
   "devDependencies": {
     "browser-sync": "^2.26.5",
@@ -20,6 +20,7 @@
     "normalize.css": "^8.0.1"
   },
   "dependencies": {
+    "fullpage.js": "^3.0.9",
     "slick-carousel": "^1.8.1"
   }
 }
