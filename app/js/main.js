@@ -14,5 +14,20 @@ $(function(){
 		autoScrolling:true,
         scrollHorizontally: true,
         sectionSelector: '.page-section',
-	});
+        scrollOverflow: true,
+        menu: '#header__nav',
+        anchors:['top', 'product', 'benefits', 'specification', 'questions', 'contacts'],
+    });
+    
+    $('.menu__btn').on('click', function() {
+        $('.menu__btn').toggleClass('menu__btn_active');
+        $('.menu__list').toggleClass('menu__list_active');
+    });
+
+    $('.menu__list-link').on('click', function() {
+        $('.menu__btn').removeClass('menu__btn_active');
+        $('.menu__list').removeClass('menu__list_active');
+    });
+
+
 });
