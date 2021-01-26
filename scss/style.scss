@@ -1,0 +1,599 @@
+@import "vars";
+@import "libs";
+@import "fonts";
+@import "global";
+
+.header {
+    z-index: 10;
+    position: fixed;
+    top: 30px;
+    left: 0;
+    right: 0;
+
+    &__inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        min-height: 30px;
+        text-transform: uppercase;
+        font-size: 15px;
+        line-height: 17px;
+        @extend %ubuntu-medium;
+    }
+
+    &__btn {
+        color: #fff;
+        background: transparent;
+        padding: 6px 28px;
+        border: 1px solid #fff;
+        border-radius: 3px;
+        margin-right: 8px;
+        text-transform: uppercase;
+        cursor: pointer;
+        transition: all .1s;
+
+        &:hover {
+            color: #1c1c1c;
+            background: #fff;
+        }
+    }
+
+    &__phone {
+        font-size: 16px;
+        line-height: 18px;
+        @extend %ubuntu-bold;
+    }
+}
+
+.menu {
+    &__list-item {
+        display: inline-block;
+        & + .menu__list-item {
+            padding-left: 20px;
+        }
+    }
+
+    &__list-phone,
+    &__btn {
+        display: none;
+    }
+}
+
+.top {
+    background: url('../images/top-bg.jpg');
+    background-size: cover;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        background: radial-gradient(45.97% 54.43% at 50% 45.57%, 
+            rgba(23, 26, 28, 0) 50.28%, 
+            rgba(23, 26, 28, 0.00225974) 50.29%, 
+            rgba(4, 5, 5, 0.820343) 58.72%, 
+            rgba(5, 5, 6, 0.792703) 80.08%, 
+            #000000 87.89%);
+        opacity: 0.4;
+    }
+
+    &__wrapper {
+        display: flex;
+        align-items: flex-end;
+    }
+
+    &__inner {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    &__title {
+        font-size: 96px;
+        line-height: 115px;
+        @extend %sf-semibold;
+        margin-bottom: 25px;
+    }
+
+    &__text {
+        margin: 25px 0 35px;
+        max-width: 325px;
+    }
+
+    &__social-item {
+        display: inline-block;
+        margin: 0 25px;
+    }
+
+    &__social-link {
+        opacity: 0.5;
+        transition: all .2s;
+
+        &:hover {
+            opacity: 1;
+        }
+    }
+}
+
+.product {
+    &__inner {
+        display: flex;
+        justify-content: space-between;
+        padding-left: 50px;
+    }
+
+    &__text {
+        max-width: 440px;
+
+        p {
+            margin-bottom: 30px;
+        }
+    }
+
+    &__slider-box {
+        position: relative;
+        padding-top: 110px;
+
+        
+    }
+
+    &__slider-text {
+        width: 281px;
+        position: absolute;
+        text-align: right;
+        font-size: 24px;
+        line-height: 28px;
+        @extend %ubuntu-medium;
+        bottom: 20px;
+        left: -250px;
+        z-index: 5;
+    }
+
+    &__slider {
+        max-width: 560px;
+
+        &::before {
+            content: '';
+            position: absolute;
+            width: 561px;
+            height: 276px;
+            border: 4px solid #fff;
+            left: 17px;
+            top: -15px;
+        }
+    }
+}
+
+
+.slider-btn {
+    padding: 13px 25px;
+    border: none;
+    background: #fff;
+    position: absolute;
+    bottom: -41px;
+    right: 0;
+    cursor: pointer;
+    z-index: 5;
+    
+    svg {
+        stroke: #000;
+    }
+
+    &__left {
+        right: 60px;
+    }
+
+    &.slick-disabled {
+        background: #000;
+
+        svg {
+            stroke: #fff;
+        }
+    }
+}
+
+.benefits {
+    &__items {
+        display: flex;
+        flex-wrap: wrap;
+        padding-left: 25px;
+    }
+
+    &__item {
+        margin-bottom: 100px;
+        display: flex;
+        align-items: flex-end;
+
+        &:nth-child(even) {
+            margin-left: 40px;
+            transform: translateY(17px);
+        }
+
+        &:first-child {
+            position: relative;
+
+            &::before {
+                content: '';
+                position: absolute;
+                height: 46px;
+                width: 245px;
+                background: url(../images/line-1.svg) no-repeat center center;
+                right: -57px;
+                top: 39px;
+            }
+        }
+
+        &:nth-child(3) {
+            margin-left: 30px;
+            position: relative;
+
+            &::before {
+                content: '';
+                position: absolute;
+                height: 62px;
+                width: 463px;
+                background: url(../images/line-2.svg) no-repeat center center;
+                right: -30px;
+                top: -70px;
+            }
+
+            &::after {
+                content: '';
+                position: absolute;
+                height: 41px;
+                width: 254px;
+                background: url(../images/line-3.svg) no-repeat center center;
+                right: -75px;
+                top: 40px;
+            }
+        }
+
+        &:nth-child(4) {
+            margin-left: 60px;
+        }
+    }
+
+    &__num {
+        @extend %ubuntu-bold;
+        line-height: 41px;
+        font-size: 36px;
+        margin-right: 10px;
+    }
+
+    &__img {
+        position: relative;
+        margin-right: 32px;
+
+        &::before {
+            content: '';
+            position: absolute;
+            width: 193px;
+            height: 128px;
+            border: 2px solid #fff;
+            top: -12px;
+            left: 12px;
+            z-index: -1;
+        }
+    }
+
+    &__info {
+        width: 300px;
+    }
+
+    &__info-title {
+        width: 123px;
+        font-size: 21px;
+        line-height: 24px;
+        @extend %ubuntu-bold;
+        margin-bottom: 10px;
+    }
+
+    &__info-text {
+        font-size: 15px;
+        line-height: 18px;
+        
+    }
+}
+
+.specification {
+    &__inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-left: 25px;
+    }
+
+    &__item {
+        &:nth-child(2) {
+            margin: 0 -15px;
+        }
+    }
+
+    &__box {
+        width: 280px;
+        position: relative;
+        margin-top: 10px;
+
+        &::before {
+            content: '';
+            position: absolute;
+        }
+
+        &_1 {
+            &::before {
+                background: url(../images/pointer-1.svg) no-repeat center center;
+                width: 230px;
+                height: 115px;
+                top: 14px;
+                right: -135px;
+            }
+        }
+        &_2 {
+            margin-top: 140px;
+
+            &::before {
+                background: url(../images/pointer-2.svg) no-repeat center center;
+                width: 347px;
+                height: 82px;
+                top: -65px;
+                right: -275px;
+            }
+        }
+        &_3 {
+            &::before {
+                background: url(../images/pointer-3.svg) no-repeat center center;
+                width: 259px;
+                height: 104px;
+                top: 14px;
+                left: -280px;
+            }
+        }
+        &_4 {
+            margin-top: 160px;
+            
+            &::before {
+                background: url(../images/pointer-4.svg) no-repeat center center;
+                width: 125px;
+                height: 90px;
+                top: -74px;
+                left: -140px;
+            }
+        }
+    }
+
+    &__box-title {
+        font-size: 21px;
+        line-height: 28px;
+        @extend %ubuntu-bold;
+        margin-bottom: 10px;
+    }
+
+    &__box-text {
+        font-size: 15px;
+        line-height: 18px;
+    }
+}
+
+.questions {
+    &__items {
+        max-width: 782px;
+        padding-bottom: 15px;
+        padding-left: 25px;
+        position: relative;
+
+        &::before {
+            content: '';
+            position: absolute;
+            width: 319px;
+            height: 125px;
+            background: url('../images/questions-bg.png') no-repeat center center;
+            bottom: 25px;
+            right: -319px;
+        }
+    }
+
+    &__item {
+        max-width: 690px;
+        background: rgba(#000, 0.3);
+        margin-bottom: 5px;
+
+        &_active {
+            .questions__item-text {
+                display: block;
+            }
+
+            .questions__item-title::after {
+                transform: rotate(180deg);
+            }
+        }
+    }
+
+    &__item-title {
+        font-size: 21px;
+        line-height: 28px;
+        @extend %ubuntu-medium;
+        color: rgba(#fff, 0.8);
+        padding: 20px 10px 24px 40px;
+        position: relative;
+        cursor: pointer;
+
+        &::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: -67px;
+            width: 67px;
+            height: 72px;
+            background: url('../images/questions-arrow.svg') no-repeat center center, #fff;
+        }
+    }
+
+    &__item-text {
+        padding: 0 5px 75px 50px;
+        font-size: 15px;
+        line-height: 22px;
+        margin: 0;
+        display: none;
+    }
+}
+
+.contacts {
+    &__inner {
+        display: flex;
+    }
+
+    &__info {
+        width: 240px;
+        margin-right: 60px;
+        margin-left: 50px;
+    }
+
+    &__info-box {
+        margin-bottom: 30px;
+    }
+
+    &__info-title {
+        display: block;
+        font-size: 21px;
+        line-height: 24px;
+        @extend %ubuntu-bold;
+        margin-bottom: 13px;
+    }
+
+    &__info-phone {
+        display: block;
+        font-size: 15px;
+        line-height: 18px;
+        margin-bottom: 5px;
+    }
+
+    &__info-email {
+        display: block;
+        font-size: 15px;
+        line-height: 18px;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+    &__form {
+        width: 570px;
+        margin-right: 106px;
+    }
+
+    &__form-title {
+        font-size: 21px;
+        line-height: 24px;
+        @extend %ubuntu-bold;
+        margin-bottom: 13px;
+    }
+
+    &__form-text {
+        font-size: 15px;
+        line-height: 18px;
+        margin: 0 0 12px;
+    }
+
+    &__form-data {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        margin-bottom: 10px;
+
+        & input {
+            width: 49%;
+            height: 46px;
+            background: rgba(#000, 0.5);
+            color: #fff;
+            border: 0;
+            font-size: 13px;
+            line-height: 15px;
+            @extend %ubuntu-regular;
+            padding: 15px;
+
+            &::placeholder {
+                color: rgba(#fff, 0.4);
+            }
+        }
+    }
+
+    &__form-textarea {
+        width: 100%;
+        min-height: 144px;
+        background: rgba(#000, 0.5);
+        color: #fff;
+        border: 0;
+        font-size: 13px;
+        line-height: 15px;
+        @extend %ubuntu-regular;
+        padding: 15px;
+        resize: none;
+        margin-bottom: 20px;
+
+        &::placeholder {
+            color: rgba(#fff, 0.4);
+        }
+    }
+
+    &__form-btn {
+        color: #fff;
+        background: transparent;
+        padding: 8px 16px;
+        border: 1px solid #fff;
+        border-radius: 2px;
+        font-size: 14px;
+        line-height: 16px;
+        text-transform: uppercase;
+        cursor: pointer;
+        transition: all .1s;
+        @extend %ubuntu-bold;
+
+        &:hover {
+            color: #1c1c1c;
+            background: #fff;
+        }
+    }
+
+    &__social {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    &__social-list {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__social-item {
+        margin: 14px 0;
+    }
+
+    &__social-link {
+        opacity: 0.5;
+        transition: all .2s;
+
+        &:hover {
+            opacity: 1;
+        }
+    }
+}
+
+.footer {
+    position: absolute;
+    bottom: 32px;
+    right: 64px;
+
+    &__copy {
+        text-align: right;
+        font-size: 13px;
+        line-height: 15px;
+        color: rgba(#fff, 0.64);
+    }
+}
+
+@import "media";
